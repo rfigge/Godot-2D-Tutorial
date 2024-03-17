@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvcuqrmvuti0i"]
+
+[ext_resource type="Texture2D" uid="uid://ck5oubeo8ugq1" path="res://art/GodotTutorialSpritesheet.png" id="1_at311"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifswo"]
+atlas = ExtResource("1_at311")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leug1"]
+atlas = ExtResource("1_at311")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay4va"]
+atlas = ExtResource("1_at311")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmx3h"]
+atlas = ExtResource("1_at311")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a343r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifswo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leug1")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay4va")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmx3h")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_24pme"]
+radius = 21.095
+
+[node name="Player" type="Area2D"]
+texture_filter = 1
+position = Vector2(106, 95)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a343r")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8.705)
+shape = SubResource("CircleShape2D_24pme")
