@@ -60,3 +60,5 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8.705)
 shape = SubResource("CircleShape2D_24pme")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
