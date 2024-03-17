@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvcuqrmvuti0i"]
+[gd_scene load_steps=9 format=3 uid="uid://cvcuqrmvuti0i"]
 
 [ext_resource type="Texture2D" uid="uid://ck5oubeo8ugq1" path="res://art/GodotTutorialSpritesheet.png" id="1_at311"]
+[ext_resource type="Script" path="res://player.gd" id="1_pclhk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifswo"]
 atlas = ExtResource("1_at311")
@@ -49,6 +50,7 @@ radius = 21.095
 [node name="Player" type="Area2D"]
 texture_filter = 1
 position = Vector2(106, 95)
+script = ExtResource("1_pclhk")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
